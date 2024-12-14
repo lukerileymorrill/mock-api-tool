@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_14_044338) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_14_053543) do
   create_table "mock_api_responses", force: :cascade do |t|
     t.integer "mock_api_id", null: false
     t.integer "status_code"
@@ -26,6 +26,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_14_044338) do
     t.string "method"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "request_body"
+    t.json "request_headers"
+    t.json "request_params"
   end
 
   add_foreign_key "mock_api_responses", "mock_apis"
