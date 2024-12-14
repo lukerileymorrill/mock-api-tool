@@ -1,0 +1,2 @@
+class MockApisController < ApplicationController
+end
